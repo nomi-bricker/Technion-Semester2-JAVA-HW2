@@ -17,6 +17,9 @@ public class Book {
         this.id = "BN" + Integer.toString(Library.bookIdCounter);
     }
 
+    /**
+     * the function printes all the book db
+     */
     public void printBookDetails() {
       //  System.out.println("Title: " + title + ", Author: " + author + ", Genre: " + genre);
         System.out.printf("Title: %s, Genre: %s, Author: %s\n", title, genre, author);
