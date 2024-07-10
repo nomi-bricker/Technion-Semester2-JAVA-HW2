@@ -2,7 +2,7 @@ public class Library {
     public static final int MAX_MEMBERS = 5;
     public static final int MAX_BOOKS = 20;
 
-    public Book[] booksArray = new Book[MAX_BOOKS];
+    public static Book[] booksArray = new Book[MAX_BOOKS];
     public static Member[] membersArray = new Member[MAX_MEMBERS];
     public static Author[] authorsArray = new Author[MAX_BOOKS];
     private String name;
@@ -67,13 +67,12 @@ public class Library {
 
 
     public void removeBook(String bookTitle, EnumGenre bookGenre, String bookAuthor) {
-        int RemovalBookIndex = isBookExists(bookTitle, bookGenre, bookAuthor);
-        if (RemovalBookIndex != -1){
-            for (int i = RemovalBookIndex + 1; i < bookCounter; i++) {
-               booksArray[i] = booksArray[i + 1];
+        int removalBookIndex = isBookExists(bookTitle, bookGenre, bookAuthor);
+        if (removalBookIndex != -1) {
+            for (int i = removalBookIndex + 1; i < bookCounter; i++) {
+                booksArray[i] = booksArray[i + 1];
             }
         }
-
     }
 
     public void printBooks() {
@@ -92,7 +91,7 @@ public class Library {
         return true;
     }
 
-    public void addMember(String clientName, int maxBooks){
+    public void addMember(String clientName, int maxBooks) {
         membersArray[memberCounter] = new Member(clientName, maxBooks);
         memberCounter++;
         cardIdCounter++;
@@ -100,7 +99,7 @@ public class Library {
 
     }
 
-    public void removeMember(){
+    public void removeMember(String cardId) {
 
     }
 
@@ -113,18 +112,51 @@ public class Library {
 
     }
 
-    public void printMember(int cardId){
-        if(cardId > cardIdCounter || isCardIdExists(cardId) == -1){
-
+    public void printMember(String cardId) {
+        int memberIndex = isCardIdExists(cardId);
+        if(indexOfMemberForCardID(cardId)!=-1){
+            membersArray[memberIndex].printMemberDetails();
         }
-        membersArray[cardId].printMemberDetails();
     }
 
     public void checkOutBook(String idCard, String idBook){
 
     }
 
-    public returnBook(){
+    public void returnBook(String idBook, String idCard) {
+        int bookIndex = indexOfBookForBookID(idBook);
+        int memberIndex = indexOfMemberForCardID(idCard);
+        if (memberIndex == -1) {
+            return;
+        }
+        if (bookIndex == -1) {
+            return;
+        }
+        membersArray[memberIndex].getCard().removeBookFromCard(booksArray[bookIndex].getId());
+        booksArray[bookIndex].setBorrowed(false);
 
+    }
+
+    public void getAuthor(String idBook) {
+    }
+
+    public static int indexOfBookForBookID(String id) {
+        for (int i = 0; i < bookCounter; i++) {
+            if (id.equals(booksArray[i].getId())) {
+                return i;
+            }
+        }
+        System.out.printf("No such book exists.\n");
+        return -1;
+    }
+
+    public int indexOfMemberForCardID(String id) {
+        for (int i = 0; i < memberCounter; i++) {
+            if (id.equals(membersArray[i].getCard().getId())) {
+                return i;
+            }
+        }
+        System.out.printf("No such member exists.\n");
+        return -1;
     }
 }

@@ -1,7 +1,7 @@
 public class LibraryCard {
     private String id;
-    public String[] borrowedBooks;
-    public int borrowedCount;
+    protected static String[] borrowedBooks; /////OK????????????????????????????????????????????????????????????????
+    private int borrowedCount;
 
     public LibraryCard(int maxBooksInCard) {
         this.id = "CL" + Integer.toString(Library.cardIdCounter);
@@ -9,17 +9,56 @@ public class LibraryCard {
         this.borrowedCount = 0;
     }
 
-    private void addBookToCard(String bookId) {
+    public static void setBorrowedBooks(String[] borrowedBooks) {
+        LibraryCard.borrowedBooks = borrowedBooks;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String[] getBorrowedBooks() {
+        return borrowedBooks;
+    }
+
+    public int getBorrowedCount() {
+        return borrowedCount;
+    }
+
+    public boolean isMaxLimit() {
         if (this.borrowedCount == this.borrowedBooks.length) {
             System.out.printf("The member Reached the limit\n");
-        } else {
-            this.borrowedBooks[this.borrowedCount] = bookId;
+            return true;
         }
+        return false;
+    }
 
-    private void removeBookToCard(String bookId){
+    public void addBookToCard(String bookId) {
+        this.borrowedBooks[this.borrowedCount] = bookId;
+        this.borrowedCount++;
+    }
 
-        }
 
+    public void isBookInBorrowedBooks(Book book) {
 
     }
+
+
+    public int indexOfThisBookInCard(String bookId) {
+        for (int i = 0; i < borrowedCount; i++) {
+            if (borrowedBooks[i].equals(bookId)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public void removeBookFromCard(String bookToRemove) {
+        int removalBookIndex = indexOfThisBookInCard(bookToRemove);
+        for (int i = removalBookIndex + 1; i < borrowedCount; i++) {
+            borrowedBooks[i] = borrowedBooks[i + 1];
+        }
+        borrowedCount--;
+    }
 }
+
