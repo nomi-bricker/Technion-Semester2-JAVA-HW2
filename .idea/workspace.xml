@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12fc1c10-7e8f-4a53-b1c6-4e7def4edde9" name="Changes" comment="first commit in batcj to try github pull request">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library.java" afterDir="false" />
-    </list>
+    <list default="true" id="12fc1c10-7e8f-4a53-b1c6-4e7def4edde9" name="Changes" comment="first commit in batcj to try github pull request" />
     <list id="abdcadfa-090b-4c66-a024-7ab618dc3071" name="Changes by micha" comment="">
       <change beforePath="$PROJECT_DIR$/src/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Author.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Book.java" afterDir="false" />
@@ -29,39 +25,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/Book.java">
-      <ranges>
-        <range start1="6" end1="7" start2="6" end2="7" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
-        <range start1="9" end1="10" start2="9" end2="10" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
-        <range start1="12" end1="13" start2="12" end2="13" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
-        <range start1="22" end1="26" start2="22" end2="30" changelist="12fc1c10-7e8f-4a53-b1c6-4e7def4edde9" />
-        <range start1="28" end1="28" start2="32" end2="33" changelist="12fc1c10-7e8f-4a53-b1c6-4e7def4edde9" />
-        <range start1="52" end1="53" start2="57" end2="58" changelist="12fc1c10-7e8f-4a53-b1c6-4e7def4edde9" />
-        <range start1="56" end1="59" start2="61" end2="64" changelist="12fc1c10-7e8f-4a53-b1c6-4e7def4edde9" />
-        <range start1="63" end1="63" start2="68" end2="73" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/Library.java">
-      <ranges>
-        <range start1="27" end1="27" start2="27" end2="29" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
-        <range start1="28" end1="33" start2="30" end2="40" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
-        <range start1="55" end1="56" start2="62" end2="64" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
-        <range start1="57" end1="60" start2="65" end2="69" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
-        <range start1="63" end1="64" start2="72" end2="72" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
-        <range start1="68" end1="74" start2="76" end2="94" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
-        <range start1="94" end1="94" start2="114" end2="118" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
-        <range start1="102" end1="102" start2="126" end2="129" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
-        <range start1="103" end1="103" start2="130" end2="132" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
-        <range start1="105" end1="113" start2="134" end2="143" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
-        <range start1="115" end1="117" start2="145" end2="147" changelist="12fc1c10-7e8f-4a53-b1c6-4e7def4edde9" />
-        <range start1="121" end1="122" start2="151" end2="151" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
-        <range start1="123" end1="123" start2="152" end2="172" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
-        <range start1="134" end1="134" start2="183" end2="185" changelist="12fc1c10-7e8f-4a53-b1c6-4e7def4edde9" />
-        <range start1="139" end1="140" start2="190" end2="196" changelist="12fc1c10-7e8f-4a53-b1c6-4e7def4edde9" />
-      </ranges>
-    </file>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -107,7 +70,7 @@
       <workItem from="1720164725266" duration="21128000" />
       <workItem from="1720191223355" duration="2901000" />
       <workItem from="1720619671880" duration="5845000" />
-      <workItem from="1720627166254" duration="17546000" />
+      <workItem from="1720627166254" duration="17647000" />
     </task>
     <task id="LOCAL-00001" summary="first commit in batcj to try github pull request">
       <option name="closed" value="true" />
@@ -125,7 +88,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720643429430</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="first commit in batcj to try github pull request">
+      <option name="closed" value="true" />
+      <created>1720698237173</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1720698237173</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
