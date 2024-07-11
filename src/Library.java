@@ -113,8 +113,8 @@ public class Library {
     }
 
     public void printMember(String cardId) {
-        int memberIndex = isCardIdExists(cardId);
-        if(indexOfMemberForCardID(cardId)!=-1){
+        int memberIndex = indexOfMemberForCardID(cardId);
+        if (indexOfMemberForCardID(cardId) != -1) {
             membersArray[memberIndex].printMemberDetails();
         }
     }
@@ -132,12 +132,19 @@ public class Library {
         if (bookIndex == -1) {
             return;
         }
+        // if borrowed + print
+       // String borrrowedStatus = membersArray[memberIndex].getCard().getId();
         membersArray[memberIndex].getCard().removeBookFromCard(booksArray[bookIndex].getId());
         booksArray[bookIndex].setBorrowed(false);
 
     }
 
-    public void getAuthor(String idBook) {
+    public Author getAuthor(String idBook) {
+        int bookIndex = indexOfBookForBookID(idBook);
+        if (bookIndex == -1) {
+            return null;
+        }
+        return booksArray[bookIndex].getAuthor();
     }
 
     public static int indexOfBookForBookID(String id) {

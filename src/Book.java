@@ -20,12 +20,17 @@ public class Book {
     public String getId(){
         return id;
     }
-    public boolean IsBorrowed(){
-        if (isBorrowed) {
-            System.out.printf("The book is already checked out.\n");
-        }
+//    public boolean IsBorrowed(){
+//        if (isBorrowed) {
+////            System.out.printf("The book is already checked out.\n");
+//        }
+//        return isBorrowed;
+//    }
+
+    public boolean getIsBorrowed() {
         return isBorrowed;
     }
+
     /**
      * the function printes all the book db
      */
@@ -50,13 +55,13 @@ public class Book {
         this.title = title;
     }
 
-    public String getAuthor() {
+    public Author getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
-    }
+//    public void setAuthor(String author) {
+//        this.author = author;
+//    }
 
     public EnumGenre.Genre getGenre() {
         return genre;
