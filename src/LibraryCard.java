@@ -58,6 +58,7 @@ public class LibraryCard {
         for (int i = removalBookIndex + 1; i < borrowedCount; i++) {
             borrowedBooks[i] = borrowedBooks[i + 1];
         }
+        borrowedBooks[borrowedCount-1]=null;
         borrowedCount--;
     }
 }

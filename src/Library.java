@@ -15,6 +15,14 @@ public class Library {
 
     public Library(String name) {
         this.name = name;
+        booksArray = new Book[MAX_BOOKS];
+        membersArray = new Member[MAX_MEMBERS];
+        authorsArray = new Author[MAX_BOOKS];
+        bookCounter = 0; //how many books we have right now
+        bookIdCounter = 0; //all the books ever added to the library
+        memberCounter = 0;
+        cardIdCounter = 0;
+        authorCounter = 0;
     }
 
     public void addBook(String bookTitle, EnumGenre.Genre genre, String author, String biography) {
@@ -22,7 +30,8 @@ public class Library {
             System.out.printf("Library is full, cannot add more books\n");
         } else {
             Author currentAuthor = new Author(author, biography);
-            if (isAuthorExists(currentAuthor) == -1) { //means we don't have this author in the library
+            int authorIndex = isAuthorExists(currentAuthor);
+            if (authorIndex == -1) { //means we don't have this author in the library
                 authorsArray[authorCounter] = currentAuthor;
                 authorCounter++;
             }
@@ -78,7 +87,9 @@ public class Library {
     public void printBooks() {
         if (isThereBooks()) {
             for (int i = 0; i < bookCounter; i++) {
-                booksArray[i].printBookDetails();
+                if (!booksArray[i].getIsBorrowed()) {
+                    booksArray[i].printBookDetails();
+                }
             }
         }
     }
@@ -114,7 +125,7 @@ public class Library {
 
     public void printMember(String cardId) {
         int memberIndex = indexOfMemberForCardID(cardId);
-        if (indexOfMemberForCardID(cardId) != -1) {
+        if (memberIndex != -1) {
             membersArray[memberIndex].printMemberDetails();
         }
     }
@@ -149,7 +160,7 @@ public class Library {
 
     public static int indexOfBookForBookID(String id) {
         for (int i = 0; i < bookCounter; i++) {
-            if (id.equals(booksArray[i].getId())) {
+            if (bookId.equals(booksArray[i].getId())) {
                 return i;
             }
         }

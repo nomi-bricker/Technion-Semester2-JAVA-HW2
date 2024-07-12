@@ -44,6 +44,9 @@ public class Main {
         System.out.println("second print:");
         library.printBooks();
 
+        Author name1 = library.getAuthor("BN0");
+        Author name2 = library.getAuthor("BN1");
+
         System.out.println(library.getAuthor("BN0") == library.getAuthor("BN1"));
         System.out.println(library.getAuthor("BN0") == library.getAuthor("BN2"));
     }
