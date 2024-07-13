@@ -6,9 +6,11 @@ public class Author {
         this.authorName = authorName;
         this.bibliography = bibliography;
     }
+
     public String getAuthorName() {
         return authorName;
     }
+
     public String getBiography() {
         return bibliography;
     }

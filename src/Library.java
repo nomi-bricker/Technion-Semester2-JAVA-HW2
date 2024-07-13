@@ -20,13 +20,23 @@ public class Library {
         authorsArray = new Author[MAX_BOOKS];
         bookCounter = 0; //how many books we have right now
         bookIdCounter = 0; //all the books ever added to the library
-        bookAvailabilityCounter=0;
+        bookAvailabilityCounter = 0;
         memberCounter = 0;
         cardIdCounter = 0;
         authorCounter = 0;
     }
 
-    public void addBook(String bookTitle, EnumGenre.Genre genre, String author, String biography) {
+    /**
+     * the function "addBook" gets 4 parameters, creating a new book, and saving the data in the arrays
+     * if it's necessary- if this author didn't exist yet, creating a new author
+     *
+     * @param bookTitle - the book title name
+     * @param genre     - the genre of the book
+     * @param author    - the author name
+     * @param biography - the biography of the author
+     *                  the function didn't return
+     */
+    public void addBook(String bookTitle, Genre genre, String author, String biography) {
         if (bookCounter == MAX_BOOKS) {
             System.out.printf("Library is full, cannot add more books\n");
         } else {
@@ -50,11 +60,12 @@ public class Library {
     /**
      * checks if this author exists in the library
      *
-     * @param currentAuthor
-     * @return the index of this author
+     * @param currentAuthor - an author with the details we got
+     * @return the index of this author in the array if he exists, else -1
      */
     private int isAuthorExists(Author currentAuthor) {
         for (int i = 0; i < authorCounter; i++) {
+            //compare the details we got, with the existing details of the authors
             if (currentAuthor.getAuthorName().equals(authorsArray[i].getAuthorName()) &&
                     currentAuthor.getBiography().equals(authorsArray[i].getBiography())) {
                 return i;
@@ -63,7 +74,13 @@ public class Library {
         return -1;
     }
 
-    public int isBookExists(String bookTitle, EnumGenre bookGenre, String bookAuthor) {
+    /**
+     * checks if this book exists in the library
+     *
+     * @param book- a book with the details we got
+     * @return the index of this book in the array if he exists, else -1
+     */
+    public int isBookExists(Book book) {
         for (int i = 0; i < bookCounter; i++) {
             if (bookTitle.equals(booksArray[i].getTitle()) &&
                     bookGenre.equals(booksArray[i].getGenre()) &&
@@ -75,16 +92,37 @@ public class Library {
         return -1;
     }
 
-
-    public void removeBook(String bookTitle, EnumGenre bookGenre, String bookAuthor) {
-        int removalBookIndex = isBookExists(bookTitle, bookGenre, bookAuthor);
-        if (removalBookIndex != -1) {
-            for (int i = removalBookIndex + 1; i < bookCounter; i++) {
-                booksArray[i] = booksArray[i + 1];
+    /**
+     * the function geta 4 parameters, checks if thia book exists in the library and removing the book
+     *
+     * @param bookTitle  - the book title name
+     * @param bookGenre  - the genre of the book
+     * @param bookAuthor - the author name
+     * @param biography  -  the biography of the author
+     *                   the function didn't return
+     */
+    public void removeBook(String bookTitle, Genre bookGenre, String bookAuthor, String biography) {
+        Author currentAuthor = new Author(bookAuthor, biography);
+        Book currentBook = new Book(bookTitle, currentAuthor, bookGenre, this);
+        int removalBookIndex = isBookExists(currentBook);
+        if (removalBookIndex == -1 || booksArray[removalBookIndex].getIsBorrowed()) {
+            System.out.printf("No such book exists.\n");
+            return;
+        }
+        //if this author has only 1 book (that we are removing), so we will remove this author
+        if (booksArray[removalBookIndex].getAuthor().getNumberOfBooks() == 1) {
+            int authorIndex = isAuthorExists(currentAuthor);
+            for (int i = authorIndex; i < authorCounter; i++) {
+                authorsArray[i] = authorsArray[i + 1];
             }
         }
     }
 
+    /**
+     * the function didn't get parameters
+     * printing all the books that are currently in the library
+     * the function didn't return
+     */
     public void printBooks() {
         if (isThereBooks()) {
             for (int i = 0; i < bookCounter; i++) {
@@ -95,6 +133,12 @@ public class Library {
         }
     }
 
+    /**
+     * the function didn't get parameters
+     * checkes if we have books currently in the library (books that are checked-out doesn't count)
+     *
+     * @return true if there are books in the library, else false
+     */
     public boolean isThereBooks() {
         if (bookAvailabilityCounter == 0) {
             System.out.printf("No books in the library currently.\n");
@@ -103,6 +147,13 @@ public class Library {
         return true;
     }
 
+    /**
+     * the function gets 2 parameters, and if we have place for new member - adding him.
+     *
+     * @param clientName - clint's name
+     * @param maxBooks   - max number of books this client can borrow
+     *                   the function didn't return
+     */
     public void addMember(String clientName, int maxBooks) {
         membersArray[memberCounter] = new Member(clientName, maxBooks);
         memberCounter++;
@@ -111,6 +162,13 @@ public class Library {
 
     }
 
+    /**
+     * the function gets parameter, checks if this member exists, removing him if he exists,
+     * and returning his book to the library if they are in borrowed status
+     *
+     * @param cardId - the unique identifier of the card
+     *               the function didn't return
+     */
     public void removeMember(String cardId) {
 
     }
@@ -135,6 +193,13 @@ public class Library {
 
     }
 
+    /**
+     * the function gets 2 parameters and returning the book to the library, if this book exists
+     *
+     * @param idBook the unique identifier of the book
+     * @param idCard -the unique identifier of the card
+     *               the function didn't return
+     */
     public void returnBook(String idBook, String idCard) {
         int bookIndex = indexOfBookForBookID(idBook);
         int memberIndex = indexOfMemberForCardID(idCard);
@@ -151,6 +216,12 @@ public class Library {
 
     }
 
+    /**
+     * the function gets parameter, and if this book exists, returns the details of the author who wrote this book
+     *
+     * @param idBook the unique identifier of the book
+     * @return an author - with all his details
+     */
     public Author getAuthor(String idBook) {
         int bookIndex = indexOfBookForBookID(idBook);
         if (bookIndex == -1) {
@@ -159,7 +230,14 @@ public class Library {
         return booksArray[bookIndex].getAuthor();
     }
 
-    public static int indexOfBookForBookID(String id) {
+    /**
+     * the function gets 2 parameters
+     *
+     * @param bookId the unique identifier of the book
+     * @param print  - boolean flag that indicates if we need to print tha output in this case
+     * @return the index of the book by his id
+     */
+    public int indexOfBookForBookID(String bookId, boolean print) {
         for (int i = 0; i < bookCounter; i++) {
             if (bookId.equals(booksArray[i].getId())) {
                 return i;
@@ -169,7 +247,13 @@ public class Library {
         return -1;
     }
 
-    public int indexOfMemberForCardID(String id) {
+    /**
+     * the function gets a parameter
+     *
+     * @param cardId - the unique identifier of the member
+     * @return the index of the member by his card id
+     */
+    public int indexOfMemberForCardID(String cardId) {
         for (int i = 0; i < memberCounter; i++) {
             if (id.equals(membersArray[i].getCard().getId())) {
                 return i;

@@ -39,11 +39,6 @@ public class LibraryCard {
     }
 
 
-    public void isBookInBorrowedBooks(Book book) {
-
-    }
-
-
     public int indexOfThisBookInCard(String bookId) {
         for (int i = 0; i < borrowedCount; i++) {
             if (borrowedBooks[i].equals(bookId)) {
@@ -62,4 +57,3 @@ public class LibraryCard {
         borrowedCount--;
     }
 }
-
