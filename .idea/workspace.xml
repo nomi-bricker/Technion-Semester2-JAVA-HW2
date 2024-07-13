@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12fc1c10-7e8f-4a53-b1c6-4e7def4edde9" name="Changes" comment="WORKING - MOST TESTS&#10;Change DRAMA to Drama,&#10;NEED TO FIX: &#10;TESTS: 6,16,24,25">
+    <list default="true" id="12fc1c10-7e8f-4a53-b1c6-4e7def4edde9" name="Changes" comment="WORKING - MOST TESTS&#10;Working test 6 + Drama">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library.java" afterDir="false" />
     </list>
     <list id="abdcadfa-090b-4c66-a024-7ab618dc3071" name="Changes by micha" comment="">
       <change beforePath="$PROJECT_DIR$/src/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Author.java" afterDir="false" />
@@ -33,18 +33,40 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/Book.java">
+    <file path="$PROJECT_DIR$/src/Library.java">
       <ranges>
-        <range start1="6" end1="10" start2="6" end2="10" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
-        <range start1="12" end1="13" start2="12" end2="13" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
-        <range start1="16" end1="17" start2="16" end2="17" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
-        <range start1="19" end1="20" start2="19" end2="20" changelist="12fc1c10-7e8f-4a53-b1c6-4e7def4edde9" />
-        <range start1="22" end1="28" start2="22" end2="22" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
-        <range start1="37" end1="39" start2="31" end2="41" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
-        <range start1="43" end1="44" start2="45" end2="46" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
-        <range start1="45" end1="46" start2="47" end2="48" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
-        <range start1="65" end1="66" start2="67" end2="68" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
-        <range start1="68" end1="68" start2="70" end2="75" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
+        <range start1="1" end1="3" start2="1" end2="4" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
+        <range start1="4" end1="13" start2="5" end2="14" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
+        <range start1="22" end1="22" start2="23" end2="24" changelist="12fc1c10-7e8f-4a53-b1c6-4e7def4edde9" />
+        <range start1="27" end1="28" start2="29" end2="30" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
+        <range start1="29" end1="30" start2="31" end2="32" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
+        <range start1="36" end1="36" start2="38" end2="41" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
+        <range start1="37" end1="45" start2="42" end2="52" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
+        <range start1="46" end1="46" start2="53" end2="54" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
+        <range start1="64" end1="65" start2="72" end2="74" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
+        <range start1="66" end1="69" start2="75" end2="79" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
+        <range start1="72" end1="73" start2="82" end2="82" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
+        <range start1="77" end1="82" start2="86" end2="98" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
+        <range start1="83" end1="83" start2="99" end2="105" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
+        <range start1="84" end1="84" start2="106" end2="108" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
+        <range start1="97" end1="98" start2="121" end2="122" changelist="12fc1c10-7e8f-4a53-b1c6-4e7def4edde9" />
+        <range start1="105" end1="106" start2="129" end2="134" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
+        <range start1="108" end1="109" start2="136" end2="136" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
+        <range start1="113" end1="119" start2="140" end2="155" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
+        <range start1="120" end1="123" start2="156" end2="157" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
+        <range start1="124" end1="124" start2="158" end2="168" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
+        <range start1="132" end1="133" start2="176" end2="176" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
+        <range start1="134" end1="134" start2="177" end2="197" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
+        <range start1="137" end1="138" start2="200" end2="200" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
+        <range start1="142" end1="143" start2="204" end2="209" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
+        <range start1="145" end1="148" start2="211" end2="213" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
+        <range start1="149" end1="150" start2="214" end2="215" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
+        <range start1="153" end1="154" start2="218" end2="219" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
+        <range start1="160" end1="161" start2="225" end2="226" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
+        <range start1="166" end1="167" start2="231" end2="234" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
+        <range start1="170" end1="171" start2="237" end2="238" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
+        <range start1="172" end1="173" start2="239" end2="240" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
+        <range start1="179" end1="179" start2="246" end2="258" changelist="abdcadfa-090b-4c66-a024-7ab618dc3071" />
       </ranges>
     </file>
   </component>
@@ -93,7 +115,7 @@
       <workItem from="1720191223355" duration="2901000" />
       <workItem from="1720619671880" duration="5845000" />
       <workItem from="1720627166254" duration="17972000" />
-      <workItem from="1720786974027" duration="26374000" />
+      <workItem from="1720786974027" duration="28052000" />
     </task>
     <task id="LOCAL-00001" summary="first commit in batcj to try github pull request">
       <option name="closed" value="true" />
@@ -143,7 +165,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720872355359</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="WORKING - MOST TESTS&#10;Working test 6 + Drama">
+      <option name="closed" value="true" />
+      <created>1720875978524</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1720875978524</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,20 +207,16 @@
     <MESSAGE value="2 function - returnBook + removeBook&#10;need to finish!" />
     <MESSAGE value="WORKING - ALL TESTS&#10;- need to delete unnecessary prints, Change DRAMA to Drama," />
     <MESSAGE value="WORKING - MOST TESTS&#10;Change DRAMA to Drama,&#10;NEED TO FIX: &#10;TESTS: 6,16,24,25" />
-    <option name="LAST_COMMIT_MESSAGE" value="WORKING - MOST TESTS&#10;Change DRAMA to Drama,&#10;NEED TO FIX: &#10;TESTS: 6,16,24,25" />
+    <MESSAGE value="WORKING - MOST TESTS&#10;Working test 6 + Drama" />
+    <option name="LAST_COMMIT_MESSAGE" value="WORKING - MOST TESTS&#10;Working test 6 + Drama" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>368</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>235</line>
-          <option name="timeStamp" value="29" />
+          <line>566</line>
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

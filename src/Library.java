@@ -20,6 +20,7 @@ public class Library {
         authorsArray = new Author[MAX_BOOKS];
         bookCounter = 0; //how many books we have right now
         bookIdCounter = 0; //all the books ever added to the library
+        bookAvailabilityCounter=0;
         memberCounter = 0;
         cardIdCounter = 0;
         authorCounter = 0;
@@ -95,7 +96,7 @@ public class Library {
     }
 
     public boolean isThereBooks() {
-        if (bookCounter == 0) {
+        if (bookAvailabilityCounter == 0) {
             System.out.printf("No books in the library currently.\n");
             return false;
         }
