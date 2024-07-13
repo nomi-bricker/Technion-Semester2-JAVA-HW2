@@ -17,7 +17,7 @@ public class Book {
         this.id = "BN" + Integer.toString(Library.bookIdCounter);
     }
 
-    public String getId(){
+    public String getId() {
         return id;
     }
 //    public boolean IsBorrowed(){
