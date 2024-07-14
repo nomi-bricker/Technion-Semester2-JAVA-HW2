@@ -7,6 +7,9 @@ public class Author {
         this.bibliography = bibliography;
     }
 
+    /**
+     * @return - the name of the author
+     */
     public String getAuthorName() {
         return authorName;
     }
